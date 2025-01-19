@@ -49,6 +49,7 @@ public class SecurityConfig {
 		http
 			.httpBasic((auth) -> auth.disable())
 			.csrf((auth) -> auth.disable())
+			.cors((auth) -> auth.configurationSource(corsConfigurationSource()))
 			.formLogin((auth) -> auth.disable())
 			.authorizeHttpRequests((auth) -> auth
 					.requestMatchers(new AntPathRequestMatcher("/*")
